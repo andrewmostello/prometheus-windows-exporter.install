@@ -32,17 +32,21 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 
 ### Collectors
 
-Name     | Description | Enabled by default
----------|-------------|--------------------
-cpu | [Win32\_PerfRawData\_PerfOS\_Processor](https://msdn.microsoft.com/en-us/library/aa394317(v=vs.90).aspx) metrics (cpu usage) | &#10003;
-cs | [Win32\_ComputerSystem](https://msdn.microsoft.com/en-us/library/aa394102) metrics (system properties, num cpus/total memory) | &#10003;
-dns | [Win32\_PerfRawData\_DNS\_DNS](https://technet.microsoft.com/en-us/library/cc977686.aspx) metrics (DNS Server) |
-iis | [Win32_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) IIS metrics |
-logical_disk | [Win32\_PerfRawData\_PerfDisk\_LogicalDisk](https://msdn.microsoft.com/en-us/windows/hardware/aa394307(v=vs.71)) metrics (disk I/O) | &#10003;
-net | [Win32\_PerfRawData\_Tcpip\_NetworkInterface](https://technet.microsoft.com/en-us/security/aa394340(v=vs.80)) metrics (network interface I/O) | &#10003;
-os | [Win32\_OperatingSystem](https://msdn.microsoft.com/en-us/library/aa394239) metrics (memory, processes, users) | &#10003;
-service | [Win32\_Service](https://msdn.microsoft.com/en-us/library/aa394418(v=vs.85).aspx) metrics (service states) | &#10003;
-system | Win32\_PerfRawData\_PerfOS\_System metrics (system calls) | &#10003;
+#### Enabled by default
+
+- `cpu` - [Win32\_PerfRawData\_PerfOS\_Processor](https://msdn.microsoft.com/en-us/library/aa394317(v=vs.90).aspx) metrics (cpu usage)
+- `cs` - [Win32\_ComputerSystem](https://msdn.microsoft.com/en-us/library/aa394102) metrics (system properties, num cpus/total memory)
+- `logical_disk` - [Win32\_PerfRawData\_PerfDisk\_LogicalDisk](https://msdn.microsoft.com/en-us/windows/hardware/aa394307(v=vs.71)) metrics (disk I/O)
+- `net` - [Win32\_PerfRawData\_Tcpip\_NetworkInterface](https://technet.microsoft.com/en-us/security/aa394340(v=vs.80)) metrics (network interface I/O)
+- `os` - [Win32\_OperatingSystem](https://msdn.microsoft.com/en-us/library/aa394239) metrics (memory, processes, users)
+- `service` - [Win32\_Service](https://msdn.microsoft.com/en-us/library/aa394418(v=vs.85).aspx) metrics (service states)
+- `system` - [Win32\_PerfRawData\_PerfOS\_System](https://msdn.microsoft.com/en-us/library/aa394272(v=vs.85).aspx) metrics (system calls)
+
+#### Optional and disabled by default
+
+- `dns` - [Win32\_PerfRawData\_DNS\_DNS](https://technet.microsoft.com/en-us/library/cc977686.aspx) metrics (DNS Server)
+- `iis` - [Win32_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) IIS metrics
+
 </description>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
