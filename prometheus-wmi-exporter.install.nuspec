@@ -13,7 +13,7 @@
     <licenseUrl>https://github.com/martinlindhe/wmi_exporter/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/martinlindhe/wmi_exporter</projectSourceUrl>
-    <tags>prometheus-wmi-exporter.install prometheus wmi exporter</tags>
+    <tags>prometheus-wmi-exporter.install prometheus wmi exporter admin</tags>
     <summary>Prometheus exporter for Windows machines, using the WMI (Windows Management Instrumentation).</summary>
     <description>
 Prometheus exporter for Windows machines, using the WMI (Windows Management Instrumentation).
@@ -48,6 +48,7 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 - `iis` - [Win32_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) IIS metrics
 
 </description>
+    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.2.3](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.2.3)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
