@@ -61,8 +61,8 @@ The following package parameters can be set:
 - `ListenPort` - The port to bind to. Defaults to 9182.
 - `MetricsPath` - The path at which to serve metrics. Defaults to `/metrics`.
 
-These parameters can be passed to the installer with the use of `-params`.
-For example: `-params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
+These parameters can be passed to the installer with the use of `--params`.
+For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 
 ### Collectors
 

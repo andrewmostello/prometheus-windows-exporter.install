@@ -15,12 +15,25 @@ $pp = Get-PackageParameters
 
 $silentArgs = "/quiet /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`""
 
-if ($pp["EnabledCollectors"] -ne $null -and $pp["EnabledCollectors"] -ne '') { $silentArgs += " ENABLED_COLLECTORS=$($pp["EnabledCollectors"])" }
-if ($pp["ListenAddress"] -ne $null -and $pp["ListenAddress"] -ne '') { $silentArgs += " LISTEN_ADDR=$($pp["ListenAddress"])" }
-if ($pp["ListenPort"] -ne $null -and $pp["ListenPort"] -ne '') { $silentArgs += " LISTEN_PORT=$($pp["ListenPort"])" }
-if ($pp["MetricsPath"] -ne $null -and $pp["MetricsPath"] -ne '') { $silentArgs += " METRICS_PATH=$($pp["MetricsPath"])" }
+if ($pp["EnabledCollectors"] -ne $null -and $pp["EnabledCollectors"] -ne '') { 
+  $silentArgs += " ENABLED_COLLECTORS=$($pp["EnabledCollectors"])"
+  Write-Host "Collectors: `'$($pp["EnabledCollectors"])`'"
+}
 
-Write-Host "Arguments: `'$silentArgs`'"
+if ($pp["ListenAddress"] -ne $null -and $pp["ListenAddress"] -ne '') { 
+  $silentArgs += " LISTEN_ADDR=$($pp["ListenAddress"])" 
+  Write-Host "Listen Address: `'$($pp["ListenAddress"])`'"
+}
+
+if ($pp["ListenPort"] -ne $null -and $pp["ListenPort"] -ne '') { 
+  $silentArgs += " LISTEN_PORT=$($pp["ListenPort"])"
+  Write-Host "Listen Port: `'$($pp["ListenPort"])`'"
+}
+
+if ($pp["MetricsPath"] -ne $null -and $pp["MetricsPath"] -ne '') { 
+  $silentArgs += " METRICS_PATH=$($pp["MetricsPath"])"
+  Write-Host "Metrics Path: `'$($pp["MetricsPath"])`'"
+}
 
 $packageArgs = @{
   packageName   = $packageName
@@ -30,7 +43,7 @@ $packageArgs = @{
   url64bit      = $url64
   #file         = $fileLocation
 
-  softwareName  = 'prometheus-wmi-exporter.install*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
+  softwareName  = 'WMI Exporter' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
 
   # Checksums are now required as of 0.10.0.
   # To determine checksums, you can get that from the original site if provided. 
