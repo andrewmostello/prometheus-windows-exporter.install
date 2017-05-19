@@ -36,7 +36,7 @@ $packageArgs = @{
   url           = $url
   url64bit      = $url64
 
-  softwareName  = 'WMI Exporter'
+  softwareName  = 'WMI Exporter*'
 
   checksum      = '8D2BCA34856A52F4B5826E447B4BB80342FF49E01EA5CED3B799C1EC926C4301'
   checksumType  = 'sha256'
