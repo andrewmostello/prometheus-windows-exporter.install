@@ -45,7 +45,7 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 #### Optional and disabled by default
 
 - `dns` - [Win32\_PerfRawData\_DNS\_DNS](https://technet.microsoft.com/en-us/library/cc977686.aspx) metrics (DNS Server)
-- `iis` - [Win32_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) IIS metrics
+- `iis` - [Win32_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) metrics (IIS)
 
 </description>
     <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.2.3](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.2.3)</releaseNotes>
