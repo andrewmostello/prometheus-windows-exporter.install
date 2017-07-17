@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-wmi-exporter.install</id>
-    <version>0.2.3</version>
+    <version>0.2.6</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-wmi-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus WMI exporter (Install)</title>
@@ -44,11 +44,14 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 
 #### Optional and disabled by default
 
+- `ad` - [Win32\_PerfRawData\_DirectoryServices\_DirectoryServices](https://msdn.microsoft.com/en-us/library/ms803980.aspx) metrics (Active Directory)
 - `dns` - [Win32\_PerfRawData\_DNS\_DNS](https://technet.microsoft.com/en-us/library/cc977686.aspx) metrics (DNS Server)
-- `iis` - [Win32_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) metrics (IIS)
+- `iis` - [Win32\_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) metrics (IIS)
+- `process` - [Win32\_PerfRawData\_PerfProc\_Process](https://msdn.microsoft.com/en-us/library/aa394323(v=vs.85).aspx) metrics (per-process stats)
+- `vmware` - Performance counters installed by the VMware guest agent
 
 </description>
-    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.2.3](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.2.3)</releaseNotes>
+    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.2.6](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.2.6)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
