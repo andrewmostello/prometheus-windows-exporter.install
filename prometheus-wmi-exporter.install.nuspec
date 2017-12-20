@@ -13,7 +13,7 @@
     <licenseUrl>https://github.com/martinlindhe/wmi_exporter/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/martinlindhe/wmi_exporter</projectSourceUrl>
-    <tags>prometheus-wmi-exporter.install prometheus wmi exporter admin</tags>
+    <tags>prometheus-wmi-exporter.install prometheus wmi exporter admin monitoring</tags>
     <summary>Prometheus exporter for Windows machines, using the WMI (Windows Management Instrumentation).</summary>
     <description>
 Prometheus exporter for Windows machines, using the WMI (Windows Management Instrumentation).
