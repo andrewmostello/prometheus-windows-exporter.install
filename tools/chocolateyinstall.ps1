@@ -29,6 +29,11 @@ if ($pp["MetricsPath"] -ne $null -and $pp["MetricsPath"] -ne '') {
   Write-Host "Metrics Path: `'$($pp["MetricsPath"])`'"
 }
 
+if ($pp["TextFileDir"] -ne $null -and $pp["TextFileDir"] -ne '') { 
+  $silentArgs += " TEXTFILE_DIR=$($pp["TextFileDir"])"
+  Write-Host "Textfile Directory: `'$($pp["TextFileDir"])`'"
+}
+
 $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
