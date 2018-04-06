@@ -26,7 +26,7 @@ The following package parameters can be set:
 - `ListenAddress` - The IP address to bind to. Defaults to 0.0.0.0.
 - `ListenPort` - The port to bind to. Defaults to 9182.
 - `MetricsPath` - The path at which to serve metrics. Defaults to `/metrics`.
-- `TextFileDir` | As the `--collector.textfile.directory` flag, provide a directory to read text files with metrics from
+- `TextFileDir` - As the `--collector.textfile.directory` flag, provide a directory to read text files with metrics from
 
 These parameters can be passed to the installer with the use of `--params`.
 For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
