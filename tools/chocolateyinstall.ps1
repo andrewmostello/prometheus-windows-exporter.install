@@ -2,8 +2,8 @@
 
 $packageName= 'prometheus-wmi-exporter.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.2.10/wmi_exporter-0.2.10-386.msi'
-$url64      = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.2.10/wmi_exporter-0.2.10-amd64.msi'
+$url        = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.3.0/wmi_exporter-0.3.0-386.msi'
+$url64      = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.3.0/wmi_exporter-0.3.0-amd64.msi'
 
 $pp = Get-PackageParameters
 
@@ -27,6 +27,11 @@ if ($pp["ListenPort"] -ne $null -and $pp["ListenPort"] -ne '') {
 if ($pp["MetricsPath"] -ne $null -and $pp["MetricsPath"] -ne '') { 
   $silentArgs += " METRICS_PATH=$($pp["MetricsPath"])"
   Write-Host "Metrics Path: `'$($pp["MetricsPath"])`'"
+}
+
+if ($pp["TextFileDir"] -ne $null -and $pp["TextFileDir"] -ne '') { 
+  $silentArgs += " TEXTFILE_DIR=$($pp["TextFileDir"])"
+  Write-Host "Textfile Directory: `'$($pp["TextFileDir"])`'"
 }
 
 $packageArgs = @{
