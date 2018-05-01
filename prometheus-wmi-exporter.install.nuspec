@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-wmi-exporter.install</id>
-    <version>0.3.0</version>
+    <version>0.3.2</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-wmi-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus WMI exporter (Install)</title>
     <authors>Martin Lindhe, Calle Pettersson</authors>
     <projectUrl>https://github.com/martinlindhe/wmi_exporter</projectUrl>
-    <iconUrl>https://pbs.twimg.com/profile_images/588945677599780865/mrhc1gSh.png</iconUrl>
+    <iconUrl>https://chocolatey.org/content/packageimages/prometheus.2.0.0.png</iconUrl>
     <licenseUrl>https://github.com/martinlindhe/wmi_exporter/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/martinlindhe/wmi_exporter</projectSourceUrl>
@@ -26,7 +26,7 @@ The following package parameters can be set:
 - `ListenAddress` - The IP address to bind to. Defaults to 0.0.0.0.
 - `ListenPort` - The port to bind to. Defaults to 9182.
 - `MetricsPath` - The path at which to serve metrics. Defaults to `/metrics`.
-- `TextFileDir` - As the `--collector.textfile.directory` flag, provide a directory to read text files with metrics from
+- `TextFileDir` - Specifies a directory for the textfile collector (equivalent to the `--collector.textfile.directory` flag).
 
 These parameters can be passed to the installer with the use of `--params`.
 For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
@@ -48,6 +48,7 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 
 - `ad` - [Win32\_PerfRawData\_DirectoryServices\_DirectoryServices](https://msdn.microsoft.com/en-us/library/ms803980.aspx) metrics (Active Directory)
 - `dns` - [Win32\_PerfRawData\_DNS\_DNS](https://technet.microsoft.com/en-us/library/cc977686.aspx) metrics (DNS Server)
+- `hyperv` - Performance counters for Hyper-V hosts
 - `iis` - [Win32\_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) metrics (IIS)
 - `msmq` - [Win32\_PerfRawData\_MSMQ\_MSMQQueue](http://wutils.com/wmi/root/cimv2/win32_perfrawdata_msmq_msmqqueue/) metrics (MSMQ/journal count)
 - `process` - [Win32\_PerfRawData\_PerfProc\_Process](https://msdn.microsoft.com/en-us/library/aa394323(v=vs.85).aspx) metrics (per-process stats)
@@ -55,7 +56,7 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 - `vmware` - Performance counters installed by the VMware guest agent
 
 </description>
-    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.3.0](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.3.0)</releaseNotes>
+    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.3.2](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.3.2)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
