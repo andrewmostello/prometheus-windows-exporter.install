@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-wmi-exporter.install</id>
-    <version>0.3.4</version>
+    <version>0.4.0</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-wmi-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus WMI exporter (Install)</title>
@@ -51,12 +51,13 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 - `hyperv` - Performance counters for Hyper-V hosts
 - `iis` - [Win32\_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) metrics (IIS)
 - `msmq` - [Win32\_PerfRawData\_MSMQ\_MSMQQueue](http://wutils.com/wmi/root/cimv2/win32_perfrawdata_msmq_msmqqueue/) metrics (MSMQ/journal count)
+- `mssql` - various [SQL Server Performance Objects](https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/use-sql-server-objects#SQLServerPOs) metrics
 - `process` - [Win32\_PerfRawData\_PerfProc\_Process](https://msdn.microsoft.com/en-us/library/aa394323(v=vs.85).aspx) metrics (per-process stats)
 - `tcp` - [Win32\_PerfRawData\_Tcpip\_TCPv4] (https://msdn.microsoft.com/en-us/library/aa394341(v=vs.85).aspx) metrics (tcp connections)
 - `vmware` - Performance counters installed by the VMware guest agent
 
 </description>
-    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.3.4](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.3.4)</releaseNotes>
+    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.4.0](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.4.0)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
