@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-wmi-exporter.install</id>
-    <version>0.4.4</version>
+    <version>0.5.0</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-wmi-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus WMI exporter (Install)</title>
@@ -33,31 +33,34 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 
 ### Collectors
 
-#### Enabled by default
+Name     | Description | Enabled by default
+---------|-------------|--------------------
+[ad](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.ad.md) | Active Directory Domain Services |
+[cpu](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.cpu.md) | CPU usage | &#10003;
+[cs](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.cs.md) | "Computer System" metrics (system properties, num cpus/total memory) | &#10003;
+[dns](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.dns.md) | DNS Server |
+[hyperv](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.hyperv.md) | Hyper-V hosts |
+[iis](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.iis.md) | IIS sites and applications |
+[logical_disk](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.logical_disk.md) | Logical disks, disk I/O | &#10003;
+[net](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.net.md) | Network interface I/O | &#10003;
+[memory](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.memory.md) | Memory usage metrics |
+[msmq](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.msmq.md) | MSMQ queues |
+[mssql](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.mssql.md) | [SQL Server Performance Objects](https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/use-sql-server-objects#SQLServerPOs) metrics  |
+[os](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.os.md) | OS metrics (memory, processes, users) | &#10003;
+[process](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.process.md) | Per-process metrics |
+[service](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.service.md) | Service state metrics | &#10003;
+[system](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.system.md) | System calls | &#10003;
+[tcp](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.tcp.md) | TCP connections |
+[textfile](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.textfile.md) | Read prometheus metrics from a text file | &#10003;
+[vmware](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.vmware.md) | Performance counters installed by the Vmware Guest agent |
 
-- `cpu` - [Win32\_PerfRawData\_PerfOS\_Processor](https://msdn.microsoft.com/en-us/library/aa394317(v=vs.90).aspx) metrics (cpu usage)
-- `cs` - [Win32\_ComputerSystem](https://msdn.microsoft.com/en-us/library/aa394102) metrics (system properties, num cpus/total memory)
-- `logical_disk` - [Win32\_PerfRawData\_PerfDisk\_LogicalDisk](https://msdn.microsoft.com/en-us/windows/hardware/aa394307(v=vs.71)) metrics (disk I/O)
-- `net` - [Win32\_PerfRawData\_Tcpip\_NetworkInterface](https://technet.microsoft.com/en-us/security/aa394340(v=vs.80)) metrics (network interface I/O)
-- `os` - [Win32\_OperatingSystem](https://msdn.microsoft.com/en-us/library/aa394239) metrics (memory, processes, users)
-- `service` - [Win32\_Service](https://msdn.microsoft.com/en-us/library/aa394418(v=vs.85).aspx) metrics (service states)
-- `system` - [Win32\_PerfRawData\_PerfOS\_System](https://msdn.microsoft.com/en-us/library/aa394272(v=vs.85).aspx) metrics (system calls)
-- `textfile` - Read prometheus metrics from a text file
+### More Information
 
-#### Optional and disabled by default
-
-- `ad` - [Win32\_PerfRawData\_DirectoryServices\_DirectoryServices](https://msdn.microsoft.com/en-us/library/ms803980.aspx) metrics (Active Directory)
-- `dns` - [Win32\_PerfRawData\_DNS\_DNS](https://technet.microsoft.com/en-us/library/cc977686.aspx) metrics (DNS Server)
-- `hyperv` - Performance counters for Hyper-V hosts
-- `iis` - [Win32\_PerfRawData\_W3SVC\_WebService](https://msdn.microsoft.com/en-us/library/aa394345) metrics (IIS)
-- `msmq` - [Win32\_PerfRawData\_MSMQ\_MSMQQueue](http://wutils.com/wmi/root/cimv2/win32_perfrawdata_msmq_msmqqueue/) metrics (MSMQ/journal count)
-- `mssql` - various [SQL Server Performance Objects](https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/use-sql-server-objects#SQLServerPOs) metrics
-- `process` - [Win32\_PerfRawData\_PerfProc\_Process](https://msdn.microsoft.com/en-us/library/aa394323(v=vs.85).aspx) metrics (per-process stats)
-- `tcp` - [Win32\_PerfRawData\_Tcpip\_TCPv4](https://msdn.microsoft.com/en-us/library/aa394341(v=vs.85).aspx) metrics (tcp connections)
-- `vmware` - Performance counters installed by the VMware guest agent
+For more information, see the project README:
+[https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/README.md](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/README.md)
 
 </description>
-    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.4.4](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.4.4)</releaseNotes>
+    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.5.0](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.5.0)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
