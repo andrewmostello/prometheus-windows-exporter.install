@@ -2,8 +2,8 @@
 
 $packageName= 'prometheus-wmi-exporter.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.5.0/wmi_exporter-0.5.0-386.msi'
-$url64      = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.5.0/wmi_exporter-0.5.0-amd64.msi'
+$url        = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.6.0/wmi_exporter-0.6.0-386.msi'
+$url64      = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.6.0/wmi_exporter-0.6.0-amd64.msi'
 
 $pp = Get-PackageParameters
 
@@ -34,6 +34,11 @@ if ($pp["TextFileDir"] -ne $null -and $pp["TextFileDir"] -ne '') {
   Write-Host "Textfile Directory: `'$($pp["TextFileDir"])`'"
 }
 
+if ($pp["ExtraFlags"] -ne $null -and $pp["ExtraFlags"] -ne '') { 
+  $silentArgs += " EXTRA_FLAGS=$($pp["ExtraFlags"])"
+  Write-Host "Extra flags: `'$($pp["ExtraFlags"])`'"
+}
+
 $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
@@ -43,9 +48,9 @@ $packageArgs = @{
 
   softwareName  = 'WMI Exporter*'
 
-  checksum      = '99284695B25D15DC27FDB3F41414553ADE153A599844BBA57F8FE6648FF44699'
+  checksum      = 'DC5C7915EE37F3EB6D7124ECE983BE982E3A0A356C66A1653775B163E18D69EF'
   checksumType  = 'sha256'
-  checksum64    = '7A63BF58CB249DE933D3C38C9CA3E22E3B0FA31BE22C12DB3A1AEEBE561DBBC8'
+  checksum64    = '404E8CAED8500DAC437386C6F6C19904706360658E79EED1CBBAE2466660DB88'
   checksumType64= 'sha256'
 
   silentArgs    = $silentArgs

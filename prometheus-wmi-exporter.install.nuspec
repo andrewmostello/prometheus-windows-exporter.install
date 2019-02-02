@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-wmi-exporter.install</id>
-    <version>0.5.0</version>
+    <version>0.6.0</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-wmi-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus WMI exporter (Install)</title>
@@ -27,40 +27,49 @@ The following package parameters can be set:
 - `ListenPort` - The port to bind to. Defaults to 9182.
 - `MetricsPath` - The path at which to serve metrics. Defaults to `/metrics`.
 - `TextFileDir` - Specifies a directory for the textfile collector (equivalent to the `--collector.textfile.directory` flag).
+- `ExtraFlags` - Allows passing full CLI flags. Defaults to an empty string.
 
 These parameters can be passed to the installer with the use of `--params`.
 For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 
 ### Collectors
 
-Name     | Description | Enabled by default
----------|-------------|--------------------
-[ad](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.ad.md) | Active Directory Domain Services |
-[cpu](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.cpu.md) | CPU usage | &#10003;
-[cs](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.cs.md) | "Computer System" metrics (system properties, num cpus/total memory) | &#10003;
-[dns](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.dns.md) | DNS Server |
-[hyperv](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.hyperv.md) | Hyper-V hosts |
-[iis](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.iis.md) | IIS sites and applications |
-[logical_disk](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.logical_disk.md) | Logical disks, disk I/O | &#10003;
-[net](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.net.md) | Network interface I/O | &#10003;
-[memory](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.memory.md) | Memory usage metrics |
-[msmq](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.msmq.md) | MSMQ queues |
-[mssql](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.mssql.md) | [SQL Server Performance Objects](https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/use-sql-server-objects#SQLServerPOs) metrics  |
-[os](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.os.md) | OS metrics (memory, processes, users) | &#10003;
-[process](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.process.md) | Per-process metrics |
-[service](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.service.md) | Service state metrics | &#10003;
-[system](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.system.md) | System calls | &#10003;
-[tcp](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.tcp.md) | TCP connections |
-[textfile](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.textfile.md) | Read prometheus metrics from a text file | &#10003;
-[vmware](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/docs/collector.vmware.md) | Performance counters installed by the Vmware Guest agent |
+| Name | Description | Enabled by default
+|------|-------------|--------------------
+|[ad](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.ad.md) | Active Directory Domain Services |
+|[cpu](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.cpu.md) | CPU usage | &#10003;
+|[cs](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.cs.md) | "Computer System" metrics (system properties, num cpus/total memory) | &#10003;
+|[dns](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.dns.md) | DNS Server |
+|[hyperv](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.hyperv.md) | Hyper-V hosts |
+|[iis](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.iis.md) | IIS sites and applications |
+|[logical_disk](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.logical_disk.md) | Logical disks, disk I/O | &#10003;
+|[memory](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.memory.md) | Memory usage metrics |
+|[msmq](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.msmq.md) | MSMQ queues |
+|[mssql](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.mssql.md) | [SQL Server Performance Objects](https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/use-sql-server-objects#SQLServerPOs) metrics  |
+|[netframework_clrexceptions](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.netframework_clrexceptions.md) | .NET Framework CLR Exceptions |
+|[netframework_clrinterop](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.netframework_clrinterop.md) | .NET Framework Interop Metrics |
+|[netframework_clrjit](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.netframework_clrjit.md) | .NET Framework JIT metrics |
+|[netframework_clrloading](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.netframework_clrloading.md) | .NET Framework CLR Loading metrics |
+|[netframework_clrlocksandthreads](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.netframework_clrlocksandthreads.md) | .NET Framework locks and metrics threads |
+|[netframework_clrmemory](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.netframework_clrmemory.md) |  .NET Framework Memory metrics |
+|[netframework_clrremoting](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.netframework_clrremoting.md) | .NET Framework Remoting metrics |
+|[netframework_clrsecurity](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.netframework_clrsecurity.md) | .NET Framework Security Check metrics |
+|[net](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.net.md) | Network interface I/O | &#10003;
+|[os](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.os.md) | OS metrics (memory, processes, users) | &#10003;
+|[process](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.process.md) | Per-process metrics |
+|[service](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.service.md) | Service state metrics | &#10003;
+|[system](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.system.md) | System calls | &#10003;
+|[tcp](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.tcp.md) | TCP connections |
+|[textfile](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.textfile.md) | Read prometheus metrics from a text file | &#10003;
+|[vmware](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/docs/collector.vmware.md) | Performance counters installed by the Vmware Guest agent |
 
 ### More Information
 
 For more information, see the project README:
-[https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/README.md](https://github.com/martinlindhe/wmi_exporter/blob/v0.5.0/README.md)
+[https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/README.md](https://github.com/martinlindhe/wmi_exporter/blob/v0.6.0/README.md)
 
 </description>
-    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.5.0](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.5.0)</releaseNotes>
+    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.6.0](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.6.0)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
