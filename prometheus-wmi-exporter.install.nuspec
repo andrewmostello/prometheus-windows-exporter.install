@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-wmi-exporter.install</id>
-    <version>0.6.0</version>
+    <version>0.6.0.20190314</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-wmi-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus WMI exporter (Install)</title>
