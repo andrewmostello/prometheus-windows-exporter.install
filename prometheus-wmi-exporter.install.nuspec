@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-wmi-exporter.install</id>
-    <version>0.7.0</version>
+    <version>0.8.0</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-wmi-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus WMI exporter (Install)</title>
@@ -35,15 +35,15 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 ### Collectors
 
 A table of the provided collectors, including those enabled by default, is available at the project page here:
-[https://github.com/martinlindhe/wmi_exporter/blob/v0.7.0/README.md#collectors](https://github.com/martinlindhe/wmi_exporter/blob/v0.7.0/README.md#collectors)
+[https://github.com/martinlindhe/wmi_exporter/blob/v0.8.0/README.md#collectors](https://github.com/martinlindhe/wmi_exporter/blob/v0.8.0/README.md#collectors)
 
 ### More Information
 
 For more information, see the project README:
-[https://github.com/martinlindhe/wmi_exporter/blob/v0.7.0/README.md](https://github.com/martinlindhe/wmi_exporter/blob/v0.7.0/README.md)
+[https://github.com/martinlindhe/wmi_exporter/blob/v0.8.0/README.md](https://github.com/martinlindhe/wmi_exporter/blob/v0.8.0/README.md)
 
 </description>
-    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.7.0](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.7.0)</releaseNotes>
+    <releaseNotes>[https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.8.0](https://github.com/martinlindhe/wmi_exporter/releases/tag/v0.8.0)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
