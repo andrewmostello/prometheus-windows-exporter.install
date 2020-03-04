@@ -2,8 +2,8 @@
 
 $packageName= 'prometheus-wmi-exporter.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.10.0/wmi_exporter-0.10.0-386.msi'
-$url64      = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.10.0/wmi_exporter-0.10.0-amd64.msi'
+$url        = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.10.1/wmi_exporter-0.10.1-386.msi'
+$url64      = 'https://github.com/martinlindhe/wmi_exporter/releases/download/v0.10.1/wmi_exporter-0.10.1-amd64.msi'
 
 $pp = Get-PackageParameters
 
@@ -48,9 +48,9 @@ $packageArgs = @{
 
   softwareName  = 'WMI Exporter*'
 
-  checksum      = '3390F299D6B58BC4AAF4FDC36AFB695C2A4A463B6E213A75803C40E2CE9D9E23'
+  checksum      = 'DE19EA5F058A83EC9655FE7C44D29261B39E28AE4103516B70AC8D63DE91D6E9'
   checksumType  = 'sha256'
-  checksum64    = 'DB7A4BCAB7834B2D430CD1FAC96491DB987587CE62986C72ED0890C31C0EB67A'
+  checksum64    = '8756868F7B26DD6E69FB95F50C2397DD5FC28FC76E85945F3F9334803E98DC3A'
   checksumType64= 'sha256'
 
   silentArgs    = $silentArgs
