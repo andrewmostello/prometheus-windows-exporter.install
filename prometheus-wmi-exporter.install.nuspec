@@ -9,7 +9,7 @@
     <title>Prometheus WMI exporter (Install)</title>
     <authors>Martin Lindhe, Calle Pettersson</authors>
     <projectUrl>https://github.com/martinlindhe/wmi_exporter</projectUrl>
-    <iconUrl>https://upload.wikimedia.org/wikipedia/en/thumb/3/38/Prometheus_software_logo.svg/220px-Prometheus_software_logo.svg.png</iconUrl>
+    <iconUrl>https://pbs.twimg.com/profile_images/588945677599780865/mrhc1gSh.png</iconUrl>
     <licenseUrl>https://github.com/martinlindhe/wmi_exporter/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/martinlindhe/wmi_exporter</projectSourceUrl>
