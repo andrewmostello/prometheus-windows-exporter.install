@@ -8,7 +8,7 @@ Chocolatey scripts to install the WMI (Windows Management Instrumentation) prome
 
 The scripts in this package are used by Chocolatey, the package manager for Windows. This repository _only_ contains said
 Chocolatey scripts. The WMI exporter itself is maintained at the project page here:
-[https://github.com/martinlindhe/wmi_exporter/blob/v0.11.0/README.md](https://github.com/martinlindhe/wmi_exporter/blob/v0.11.0/README.md)
+[https://github.com/martinlindhe/wmi_exporter/blob/v0.11.1/README.md](https://github.com/martinlindhe/wmi_exporter/blob/v0.11.1/README.md)
 
 See [https://chocolatey.org/packages/prometheus-wmi-exporter.install](https://chocolatey.org/packages/prometheus-wmi-exporter.install) for details on Chocolatey and usage.
 
