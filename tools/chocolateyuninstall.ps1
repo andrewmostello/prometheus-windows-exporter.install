@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName = 'prometheus-wmi-exporter.install'
+$packageName = 'prometheus-windows-exporter.install'
 $softwareName = 'WMI Exporter*'
-$installerType = 'MSI' 
+$installerType = 'MSI'
 
 $silentArgs = '/quiet /norestart'
 $validExitCodes = @(0, 3010, 1605, 1614, 1641)
@@ -14,7 +14,7 @@ $uninstalled = $false
 [array]$key = Get-UninstallRegistryKey -SoftwareName $softwareName
 
 if ($key.Count -eq 1) {
-  $key | % { 
+  $key | % {
     $file = "$($_.UninstallString)"
 
     if ($installerType -eq 'MSI') {

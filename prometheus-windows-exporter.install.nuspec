@@ -2,23 +2,23 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>prometheus-wmi-exporter.install</id>
+    <id>prometheus-windows-exporter.install</id>
     <version>0.12.0</version>
-    <packageSourceUrl>https://github.com/andrewmostello/prometheus-wmi-exporter.install</packageSourceUrl>
+    <packageSourceUrl>https://github.com/andrewmostello/prometheus-windows-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
-    <title>Prometheus WMI exporter (Install)</title>
+    <title>Prometheus Windows exporter (MSI Installer)</title>
     <authors>Martin Lindhe, Calle Pettersson</authors>
     <projectUrl>https://github.com/martinlindhe/wmi_exporter</projectUrl>
     <iconUrl>https://pbs.twimg.com/profile_images/588945677599780865/mrhc1gSh.png</iconUrl>
     <licenseUrl>https://github.com/martinlindhe/wmi_exporter/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/martinlindhe/wmi_exporter</projectSourceUrl>
-    <tags>prometheus-wmi-exporter.install prometheus wmi exporter admin monitoring</tags>
-    <summary>Prometheus exporter for Windows machines, using the WMI (Windows Management Instrumentation).</summary>
+    <tags>prometheus-windows-exporter.install prometheus windows exporter admin monitoring</tags>
+    <summary>Prometheus exporter for Windows machines.</summary>
     <description>
-Prometheus exporter for Windows machines, using the WMI (Windows Management Instrumentation).
+Prometheus exporter for Windows machines.
 
-***Important note:*** This is the final release of the exporter under the name "prometheus-wmi-exporter.install." This package will be deprecated in the next release and superseded by [prometheus-windows-exporter.install](https://chocolatey.org/packages/prometheus-windows-exporter.install).
+Note: This package supersedes the "prometheus-wmi-exporter.install" package. The exporter will be renamed, and this package has been renamed to match. This package is being created now provide for a smoother transition.
 
 ### Package parameters
 
