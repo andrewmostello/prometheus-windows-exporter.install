@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $packageName = 'prometheus-windows-exporter.install'
-$softwareName = 'WMI Exporter*'
+$softwareName = 'windows_exporter*'
 $installerType = 'MSI'
 
 $silentArgs = '/quiet /norestart'
