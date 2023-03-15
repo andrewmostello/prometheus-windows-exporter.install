@@ -3,14 +3,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-windows-exporter.install</id>
-    <version>0.20.0</version>
+    <version>0.21.0</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-windows-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus Windows exporter (MSI Installer)</title>
     <authors>Martin Lindhe, Calle Pettersson</authors>
     <projectUrl>https://github.com/prometheus-community/windows_exporter</projectUrl>
     <iconUrl>https://pbs.twimg.com/profile_images/588945677599780865/mrhc1gSh.png</iconUrl>
-    <licenseUrl>https://github.com/prometheus-community/windows_exporter/blob/v0.20.0/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/prometheus-community/windows_exporter/blob/v0.21.0/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/prometheus-community/windows_exporter</projectSourceUrl>
     <tags>prometheus-windows-exporter.install prometheus windows exporter admin monitoring</tags>
@@ -29,6 +29,7 @@ The following package parameters can be set:
 - `ListenPort` - The port to bind to. Defaults to 9182.
 - `MetricsPath` - The path at which to serve metrics. Defaults to `/metrics`.
 - `TextFileDir` - Specifies a directory for the textfile collector (equivalent to the `--collector.textfile.directory` flag).
+- `RemoteAddresses` - Allows setting comma separated remote IP addresses for the Windows Firewall exception (whitelist). Defaults to an empty string (any remote address).
 - `ExtraFlags` - Allows passing full CLI flags. Defaults to an empty string.
 
 These parameters can be passed to the installer with the use of `--params`.
@@ -37,15 +38,15 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 ### Collectors
 
 A table of the provided collectors, including those enabled by default, is available at the project page here:
-[https://github.com/prometheus-community/windows_exporter/blob/v0.20.0/README.md#collectors](https://github.com/prometheus-community/windows_exporter/blob/v0.20.0/README.md#collectors)
+[https://github.com/prometheus-community/windows_exporter/blob/v0.21.0/README.md#collectors](https://github.com/prometheus-community/windows_exporter/blob/v0.21.0/README.md#collectors)
 
 ### More Information
 
 For more information, see the project README:
-[https://github.com/prometheus-community/windows_exporter/blob/v0.20.0/README.md](https://github.com/prometheus-community/windows_exporter/blob/v0.20.0/README.md)
+[https://github.com/prometheus-community/windows_exporter/blob/v0.21.0/README.md](https://github.com/prometheus-community/windows_exporter/blob/v0.21.0/README.md)
 
 </description>
-    <releaseNotes>[https://github.com/prometheus-community/windows_exporter/releases/tag/v0.20.0](https://github.com/prometheus-community/windows_exporter/releases/tag/v0.20.0)</releaseNotes>
+    <releaseNotes>[https://github.com/prometheus-community/windows_exporter/releases/tag/v0.21.0](https://github.com/prometheus-community/windows_exporter/releases/tag/v0.21.0)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>

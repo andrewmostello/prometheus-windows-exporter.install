@@ -2,8 +2,8 @@
 
 $packageName= 'prometheus-windows-exporter.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://github.com/prometheus-community/windows_exporter/releases/download/v0.20.0/windows_exporter-0.20.0-386.msi'
-$url64      = 'https://github.com/prometheus-community/windows_exporter/releases/download/v0.20.0/windows_exporter-0.20.0-amd64.msi'
+$url        = 'https://github.com/prometheus-community/windows_exporter/releases/download/v0.21.0/windows_exporter-0.21.0-386.msi'
+$url64      = 'https://github.com/prometheus-community/windows_exporter/releases/download/v0.21.0/windows_exporter-0.21.0-amd64.msi'
 
 $pp = Get-PackageParameters
 
@@ -34,6 +34,11 @@ if ($pp["TextFileDir"] -ne $null -and $pp["TextFileDir"] -ne '') {
   Write-Host "Textfile Directory: `'$($pp["TextFileDir"])`'"
 }
 
+if ($pp["RemoteAddresses"] -ne $null -and $pp["RemoteAddresses"] -ne '') {
+  $silentArgs += " REMOTE_ADDR=$($pp["RemoteAddresses"])"
+  Write-Host "Remote Addresses: `'$($pp["RemoteAddresses"])`'"
+}
+
 if ($pp["ExtraFlags"] -ne $null -and $pp["ExtraFlags"] -ne '') {
   $silentArgs += " EXTRA_FLAGS=$($pp["ExtraFlags"])"
   Write-Host "Extra flags: `'$($pp["ExtraFlags"])`'"
@@ -48,9 +53,9 @@ $packageArgs = @{
 
   softwareName  = 'windows_exporter*'
 
-  checksum      = '427C9BE4C6EF3C331EF85097BE4BFDC8FEB9BF312654C4563769D5F9A6FDB1D6'
+  checksum      = '858759895C11F7A589314CFA1E28F6B3E3D99191865D207BE32CEB2E97097418'
   checksumType  = 'sha256'
-  checksum64    = '822166C33CE415436A287F4F5BF34C9737DA5201CDA3B6A31FFC5B2BE5023679'
+  checksum64    = 'A93AF89A9FB277788B4F3086CC31EE8A6DC0D7CF9CF3F4C4DE871ACE441A4B5B'
   checksumType64= 'sha256'
 
   silentArgs    = $silentArgs
