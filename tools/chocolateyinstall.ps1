@@ -2,12 +2,13 @@
 
 $packageName= 'prometheus-windows-exporter.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = "https://github.com/prometheus-community/windows_exporter/releases/download/v$ChocolateyPackageVersion/windows_exporter-$ChocolateyPackageVersion-386.msi"
-$url64      = "https://github.com/prometheus-community/windows_exporter/releases/download/v$ChocolateyPackageVersion/windows_exporter-$ChocolateyPackageVersion-amd64.msi"
+$version    = "$($env:chocolateyPackageVersion)"
+$url        = "https://github.com/prometheus-community/windows_exporter/releases/download/v$version/windows_exporter-$version-386.msi"
+$url64      = "https://github.com/prometheus-community/windows_exporter/releases/download/v$version/windows_exporter-$version-amd64.msi"
 
 $pp = Get-PackageParameters
 
-$silentArgs = "/quiet /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`""
+$silentArgs = "/quiet /norestart /l*v `"$($env:TEMP)\$($packageName).$($version).MsiInstall.log`""
 
 if ($pp["EnabledCollectors"] -ne $null -and $pp["EnabledCollectors"] -ne '') {
   $silentArgs += " ENABLED_COLLECTORS=$($pp["EnabledCollectors"])"
