@@ -40,7 +40,7 @@ if ($pp["RemoteAddresses"] -ne $null -and $pp["RemoteAddresses"] -ne '') {
 }
 
 if ($pp["ExtraFlags"] -ne $null -and $pp["ExtraFlags"] -ne '') {
-  $silentArgs += " EXTRA_FLAGS=$($pp["ExtraFlags"])"
+  $silentArgs += " EXTRA_FLAGS=`"$($pp["ExtraFlags"])`""
   Write-Host "Extra flags: `'$($pp["ExtraFlags"])`'"
 }
 
