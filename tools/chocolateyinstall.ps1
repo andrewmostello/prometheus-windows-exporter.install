@@ -2,7 +2,7 @@
 
 $packageName= 'prometheus-windows-exporter.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$version    = "0.25.1"
+$version    = "0.26.0"
 $url64      = "https://github.com/prometheus-community/windows_exporter/releases/download/v$version/windows_exporter-$version-amd64.msi"
 
 $pp = Get-PackageParameters
@@ -52,7 +52,7 @@ $packageArgs = @{
 
   softwareName  = 'windows_exporter*'
 
-  checksum64    = 'bbe6a2e13850e7fd15a3b9a58ed4a078a93b402caec62df014453f258878134c'
+  checksum64    = '86406b4ee5fc31c16c381944d8bd07474eb65083655132b4e4684580820b842c'
   checksumType64= 'sha256'
 
   silentArgs    = $silentArgs
