@@ -52,7 +52,7 @@ $packageArgs = @{
 
   softwareName  = 'windows_exporter*'
 
-  checksum64    = '5DFBBD69D51D941960DD6D31B36EBD8C9478623DC4453876754ACFB5B61194C2'
+  checksum64    = '55F90773BE6AE991FF26D797B5307650E4C0492FE3717BE497538F94F6944272'
   checksumType64= 'sha256'
 
   silentArgs    = $silentArgs
