@@ -1,22 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>prometheus-windows-exporter.install</id>
-    <version>0.27.2</version>
-    <packageSourceUrl>https://github.com/andrewmostello/prometheus-windows-exporter.install</packageSourceUrl>
-    <owners>kebab-case</owners>
+    <version>0.30.4</version>
     <title>Prometheus Windows exporter (MSI Installer)</title>
     <authors>Martin Lindhe, Calle Pettersson</authors>
+    <owners>kebab-case</owners>
+    <licenseUrl>https://github.com/prometheus-community/windows_exporter/blob/v0.30.4/LICENSE</licenseUrl>
     <projectUrl>https://github.com/prometheus-community/windows_exporter</projectUrl>
     <iconUrl>https://pbs.twimg.com/profile_images/588945677599780865/mrhc1gSh.png</iconUrl>
-    <licenseUrl>https://github.com/prometheus-community/windows_exporter/blob/v0.27.2/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/prometheus-community/windows_exporter</projectSourceUrl>
-    <tags>prometheus-windows-exporter.install prometheus windows exporter admin monitoring</tags>
-    <summary>Prometheus exporter for Windows machines.</summary>
-    <description>
-Prometheus exporter for Windows machines.
+    <description>Prometheus exporter for Windows machines.
 
 Note: This package supersedes the "prometheus-wmi-exporter.install" package. The exporter will be renamed, and this package has been renamed to match. This package is being created now provide for a smoother transition.
 
@@ -38,20 +32,19 @@ For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
 ### Collectors
 
 A table of the provided collectors, including those enabled by default, is available at the project page here:
-[https://github.com/prometheus-community/windows_exporter/blob/v0.27.2/README.md#collectors](https://github.com/prometheus-community/windows_exporter/blob/v0.27.2/README.md#collectors)
+[https://github.com/prometheus-community/windows_exporter/blob/v0.30.4/README.md#collectors](https://github.com/prometheus-community/windows_exporter/blob/v0.30.4/README.md#collectors)
 
 ### More Information
 
 For more information, see the project README:
-[https://github.com/prometheus-community/windows_exporter/blob/v0.27.2/README.md](https://github.com/prometheus-community/windows_exporter/blob/v0.27.2/README.md)
-
-</description>
-    <releaseNotes>[https://github.com/prometheus-community/windows_exporter/releases/tag/v0.27.2](https://github.com/prometheus-community/windows_exporter/releases/tag/v0.27.2)</releaseNotes>
+[https://github.com/prometheus-community/windows_exporter/blob/v0.30.4/README.md](https://github.com/prometheus-community/windows_exporter/blob/v0.30.4/README.md)</description>
+    <summary>Prometheus exporter for Windows machines.</summary>
+    <releaseNotes>[https://github.com/prometheus-community/windows_exporter/releases/tag/v0.30.4](https://github.com/prometheus-community/windows_exporter/releases/tag/v0.30.4)</releaseNotes>
+    <tags>prometheus-windows-exporter.install prometheus windows exporter admin monitoring</tags>
+    <projectSourceUrl>https://github.com/prometheus-community/windows_exporter</projectSourceUrl>
+    <packageSourceUrl>https://github.com/andrewmostello/prometheus-windows-exporter.install</packageSourceUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-  </files>
 </package>
