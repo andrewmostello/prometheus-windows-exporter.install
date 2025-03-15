@@ -2,7 +2,7 @@
 
 $packageName= 'prometheus-windows-exporter.install'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$version    = "0.28.2"
+$version    = "0.30.0"
 $url64      = "https://github.com/prometheus-community/windows_exporter/releases/download/v$version/windows_exporter-$version-amd64.msi"
 
 $pp = Get-PackageParameters
@@ -12,6 +12,11 @@ $silentArgs = "/quiet /norestart /l*v `"$($env:TEMP)\$($packageName).$($version)
 if ($pp["EnabledCollectors"] -ne $null -and $pp["EnabledCollectors"] -ne '') {
   $silentArgs += " ENABLED_COLLECTORS=$($pp["EnabledCollectors"])"
   Write-Host "Collectors: `'$($pp["EnabledCollectors"])`'"
+}
+
+if ($pp["ConfigFile"] -ne $null -and $pp["ConfigFile"] -ne '') {
+  $silentArgs += " CONFIG_FILE=$($pp["ConfigFile"])"
+  Write-Host "Config File: `'$($pp["ConfigFile"])`'"
 }
 
 if ($pp["ListenAddress"] -ne $null -and $pp["ListenAddress"] -ne '') {
@@ -29,9 +34,13 @@ if ($pp["MetricsPath"] -ne $null -and $pp["MetricsPath"] -ne '') {
   Write-Host "Metrics Path: `'$($pp["MetricsPath"])`'"
 }
 
-if ($pp["TextFileDir"] -ne $null -and $pp["TextFileDir"] -ne '') {
-  $silentArgs += " TEXTFILE_DIR=$($pp["TextFileDir"])"
-  Write-Host "Textfile Directory: `'$($pp["TextFileDir"])`'"
+if ($pp["TextFileDirs"] -ne $null -and $pp["TextFileDirs"] -ne '') {
+  $silentArgs += " TEXTFILE_DIRS=$($pp["TextFileDirs"])"
+  Write-Host "Textfile Directories: `'$($pp["TextFileDirs"])`'"
+
+} elseif ($pp["TextFileDir"] -ne $null -and $pp["TextFileDir"] -ne '') {
+  $silentArgs += " TEXTFILE_DIRS=$($pp["TextFileDir"])"
+  Write-Host "Textfile Directories: `'$($pp["TextFileDir"])`'"
 }
 
 if ($pp["RemoteAddresses"] -ne $null -and $pp["RemoteAddresses"] -ne '') {
@@ -41,7 +50,17 @@ if ($pp["RemoteAddresses"] -ne $null -and $pp["RemoteAddresses"] -ne '') {
 
 if ($pp["ExtraFlags"] -ne $null -and $pp["ExtraFlags"] -ne '') {
   $silentArgs += " EXTRA_FLAGS=`"$($pp["ExtraFlags"])`""
-  Write-Host "Extra flags: `'$($pp["ExtraFlags"])`'"
+  Write-Host "Extra Flags: `'$($pp["ExtraFlags"])`'"
+}
+
+if ($pp["AddLocal"] -ne $null -and $pp["AddLocal"] -ne '') {
+  $silentArgs += " ADDLOCAL=`"$($pp["AddLocal"])`""
+  Write-Host "Add Local: `'$($pp["AddLocal"])`'"
+}
+
+if ($pp["Remove"] -ne $null -and $pp["Remove"] -ne '') {
+  $silentArgs += " REMOVE=`"$($pp["Remove"])`""
+  Write-Host "Remove: `'$($pp["Remove"])`'"
 }
 
 $packageArgs = @{
@@ -52,7 +71,7 @@ $packageArgs = @{
 
   softwareName  = 'windows_exporter*'
 
-  checksum64    = 'A58DD744C85DC6A109D122DA07A106C623975A8BA228A7FECDDDD4124939F8B9'
+  checksum64    = '21290ED6EEEF383483BA8C20BB1EBB61A843D80120EA9DFAE67B28A614FE7F24'
   checksumType64= 'sha256'
 
   silentArgs    = $silentArgs
