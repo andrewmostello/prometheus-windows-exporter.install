@@ -3,20 +3,22 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>prometheus-windows-exporter.install</id>
-    <version>0.30.5</version>
+    <version>0.31.9</version>
     <packageSourceUrl>https://github.com/andrewmostello/prometheus-windows-exporter.install</packageSourceUrl>
     <owners>kebab-case</owners>
     <title>Prometheus Windows exporter (MSI Installer)</title>
     <authors>Martin Lindhe, Calle Pettersson</authors>
     <projectUrl>https://github.com/prometheus-community/windows_exporter</projectUrl>
     <iconUrl>https://pbs.twimg.com/profile_images/588945677599780865/mrhc1gSh.png</iconUrl>
-    <licenseUrl>https://github.com/prometheus-community/windows_exporter/blob/v0.30.5/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/prometheus-community/windows_exporter/blob/v0.31.9/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/prometheus-community/windows_exporter</projectSourceUrl>
     <tags>prometheus-windows-exporter.install prometheus windows exporter admin monitoring</tags>
     <summary>Prometheus exporter for Windows machines.</summary>
     <description>
 Prometheus exporter for Windows machines.
+
+This package installs the official windows_exporter MSI for the native OS architecture: AMD64 (x64) or ARM64.
 
 Note: This package supersedes the "prometheus-wmi-exporter.install" package. The exporter will be renamed, and this package has been renamed to match. This package is being created now provide for a smoother transition.
 
@@ -25,7 +27,7 @@ Note: This package supersedes the "prometheus-wmi-exporter.install" package. The
 The following package parameters can be set:
 
 - `EnabledCollectors` - As the `--collectors.enabled` flag, provide a comma-separated list of enabled collectors.
-- `ConfigFile` - Use the `--config.file` flag to specify a config file. If empty, no config file will be set. The special value config.yaml set the path to the config.yaml at install dir.
+- `ConfigFile` - Use the `--config.file` flag to specify a config file. If empty, the default config.yaml at install dir will be used. The special value config.yaml set the path to the config.yaml at install dir. Any other config file must exist before the installation is started.
 - `ListenAddress` - The IP address to bind to. Defaults to an empty string (any local address).
 - `ListenPort` - The port to bind to. Defaults to 9182.
 - `MetricsPath` - The path at which to serve metrics. Defaults to `/metrics`.
@@ -37,20 +39,22 @@ The following package parameters can be set:
 - `Remove` - Disables features within the windows_exporter installer. Supported values: `FirewallException`.
 
 These parameters can be passed to the installer with the use of `--params`.
-For example: `--params '"/EnabledCollectors:cpu,dns,iis /ListenPort:9182"'`.
+For example: `--params '"/EnabledCollectors:cpu,logical_disk,memory /ListenPort:9182"'`.
 
 ### Collectors
 
 A table of the provided collectors, including those enabled by default, is available at the project page here:
-[https://github.com/prometheus-community/windows_exporter/blob/v0.30.5/README.md#collectors](https://github.com/prometheus-community/windows_exporter/blob/v0.30.5/README.md#collectors)
+[https://github.com/prometheus-community/windows_exporter/blob/v0.31.9/README.md#collectors](https://github.com/prometheus-community/windows_exporter/blob/v0.31.9/README.md#collectors)
 
 ### More Information
 
 For more information, see the project README:
-[https://github.com/prometheus-community/windows_exporter/blob/v0.30.5/README.md](https://github.com/prometheus-community/windows_exporter/blob/v0.30.5/README.md)
+[https://github.com/prometheus-community/windows_exporter/blob/v0.31.9/README.md](https://github.com/prometheus-community/windows_exporter/blob/v0.31.9/README.md)
 
 </description>
-    <releaseNotes>[https://github.com/prometheus-community/windows_exporter/releases/tag/v0.30.5](https://github.com/prometheus-community/windows_exporter/releases/tag/v0.30.5)</releaseNotes>
+    <releaseNotes>[https://github.com/prometheus-community/windows_exporter/releases/tag/v0.31.9](https://github.com/prometheus-community/windows_exporter/releases/tag/v0.31.9)
+
+Upgrading from 0.30.x: windows_exporter 0.31.0 removed the `cs` and `logon` collectors and support for remote (HTTP/HTTPS) config files, and config files are now validated strictly. The service will not start if `EnabledCollectors`, `ConfigFile`, `ExtraFlags` or the config file still use removed options. See [https://github.com/prometheus-community/windows_exporter/releases/tag/v0.31.0](https://github.com/prometheus-community/windows_exporter/releases/tag/v0.31.0).</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.1.0" />
     </dependencies>
